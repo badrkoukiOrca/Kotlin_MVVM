@@ -1,10 +1,11 @@
-package com.example.kotlin_mvvm.View
+package com.example.kotlin_mvvm.view
 
 import android.databinding.DataBindingUtil
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import com.example.kotlin_mvvm.Model.MyName
+import com.example.kotlin_mvvm.model.MyName
 import com.example.kotlin_mvvm.R
+import com.example.kotlin_mvvm.viewmodel.ViewModel
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: com.example.kotlin_mvvm.databinding.ActivityMainBinding
@@ -15,7 +16,8 @@ class MainActivity : AppCompatActivity() {
 
         binding.myName = myName
         binding.doneButton.setOnClickListener {
-            com.example.kotlin_mvvm.ViewModel.addNickname(it, binding)
+            //if(nicknameEdit.text.toString())
+            ViewModel.addNickname(it, binding,applicationContext)
         }
     }
     /*private fun addNickname(view: View) {
